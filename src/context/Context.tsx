@@ -5,29 +5,32 @@ import React, {
   type ReactNode,
 } from 'react';
 
-type TokenContext = {
+type TakeContextType = {
   count: number;
   setCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const CreateTokenContext = createContext<TokenContext | undefined>(undefined);
+type ComponentType = {
+  children: ReactNode;
+};
+
+const CreateContextProvider = createContext<TakeContextType | undefined>(
+  undefined
+);
 
 export const useTokenContext = () => {
-  const context = useContext(CreateTokenContext);
+  const context = useContext(CreateContextProvider);
   if (!context) {
-    throw new Error(
-      'useTokenContext must be used within a TokenContextProvider'
-    );
+    throw new Error('Please add the context provider wrapper');
   }
   return context;
 };
 
-export const TokenContext = ({ children }: { children: ReactNode }) => {
+export const TokenContext = ({ children }: ComponentType) => {
   const [count, setCount] = useState(0);
-
   return (
-    <CreateTokenContext.Provider value={{ count, setCount }}>
+    <CreateContextProvider.Provider value={{ count, setCount }}>
       {children}
-    </CreateTokenContext.Provider>
+    </CreateContextProvider.Provider>
   );
 };
