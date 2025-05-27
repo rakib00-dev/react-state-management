@@ -1,5 +1,5 @@
 import { useTokenContext } from './context/Context';
-import { Test } from './context-components/Test';
+import { Increase } from './context-components/Increase';
 
 const App = () => {
   const { count, setCount } = useTokenContext();
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <div onClick={() => setCount((prev) => prev + 1)}>{count}App</div>test:
-      <Test />
+      <Increase />
     </>
   );
 };

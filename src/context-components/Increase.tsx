@@ -1,6 +1,6 @@
 import { useTokenContext } from '../context/Context';
 
-export const Test = () => {
+export const Increase = () => {
   const { count } = useTokenContext();
-  return <div>test {count}</div>;
+  return <div>Increase {count}</div>;
 };
