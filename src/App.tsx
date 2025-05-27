@@ -1,10 +1,16 @@
 import { useTokenContext } from './context/Context';
+import { Test } from './Test';
 
 const App = () => {
-  const { count } = useTokenContext();
+  const { count, setCount } = useTokenContext();
   console.log(count);
 
-  return <div>App</div>;
+  return (
+    <>
+      <div onClick={() => setCount((prev) => prev + 1)}>{count}App</div>test:
+      <Test />
+    </>
+  );
 };
 
 export default App;
