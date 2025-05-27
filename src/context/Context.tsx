@@ -1,17 +1,33 @@
-import { createContext, useContext, useState } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  type ReactNode,
+} from 'react';
 
-const CreateTokenContext = createContext(null);
-
-export const useTokenContext = () => {
-  return useContext(CreateTokenContext);
+type TokenContext = {
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export const TokenContext = () => {
+const CreateTokenContext = createContext<TokenContext | undefined>(undefined);
+
+export const useTokenContext = () => {
+  const context = useContext(CreateTokenContext);
+  if (!context) {
+    throw new Error(
+      'useTokenContext must be used within a TokenContextProvider'
+    );
+  }
+  return context;
+};
+
+export const TokenContext = ({ children }: { children: ReactNode }) => {
   const [count, setCount] = useState(0);
 
   return (
     <CreateTokenContext.Provider value={{ count, setCount }}>
-      Context
+      {children}
     </CreateTokenContext.Provider>
   );
 };
