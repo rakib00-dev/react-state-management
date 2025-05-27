@@ -1,4 +1,4 @@
-import { useTokenContext } from './context/Context';
+import { useTokenContext } from '../context/Context';
 
 export const Test = () => {
   const { count } = useTokenContext();

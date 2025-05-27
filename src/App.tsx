@@ -1,5 +1,5 @@
 import { useTokenContext } from './context/Context';
-import { Test } from './Test';
+import { Test } from './context-components/Test';
 
 const App = () => {
   const { count, setCount } = useTokenContext();
