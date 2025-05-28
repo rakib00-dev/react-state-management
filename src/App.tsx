@@ -1,26 +1,10 @@
-// import { useTokenContext } from './context/Context';
-// import { Increase } from './context-components/Increase';
-// import { Decrease } from './context-components/Decrease';
+import { useAppSelector } from './redux/hooks';
 
 const App = () => {
-  // const { count } = useTokenContext();
-  // console.log(count);
-  // return (
-  //   <>
-  //     {' '}
-  //     <div>{count} App</div>
-  //     <br />
-  //     <br />
-  //     show <b>Increased</b> Ammount : <Increase />
-  //     <br />
-  //     <br />
-  //     show <b>Decrase</b> Ammount : <Decrease />
-  //   </>
-  // );
-
+  const count = useAppSelector((state) => state.counter);
   return (
     <>
-      <h1>hello</h1>
+      <h1>count is {count}</h1>
     </>
   );
 };
