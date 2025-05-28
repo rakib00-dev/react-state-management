@@ -14,23 +14,23 @@ type ComponentType = {
   children: ReactNode;
 };
 
-const CreateContextProvider = createContext<TakeContextType | undefined>(
+export const TokenContext = createContext<TakeContextType | undefined>(
   undefined
 );
 
 export const useTokenContext = () => {
-  const context = useContext(CreateContextProvider);
+  const context = useContext(TokenContext);
   if (!context) {
     throw new Error('Please add the context provider wrapper');
   }
   return context;
 };
 
-export const TokenContext = ({ children }: ComponentType) => {
+export const TokenProvider = ({ children }: ComponentType) => {
   const [count, setCount] = useState(0);
   return (
-    <CreateContextProvider.Provider value={{ count, setCount }}>
+    <TokenContext.Provider value={{ count, setCount }}>
       {children}
-    </CreateContextProvider.Provider>
+    </TokenContext.Provider>
   );
 };
