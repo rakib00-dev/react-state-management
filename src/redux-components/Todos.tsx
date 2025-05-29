@@ -15,9 +15,9 @@ export const Todos = () => {
             gap: '10px',
           }}
         >
-          <h3>
-            <b>{e.id}</b>
-          </h3>
+          <h3>{e.id.slice(0, 5)}...</h3>
+          <br />
+          <br />
           <h2>{e.text}</h2>
           <button
             style={{ cursor: 'pointer' }}
