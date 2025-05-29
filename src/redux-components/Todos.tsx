@@ -8,6 +8,7 @@ export const Todos = () => {
     <div>
       {todos.map((e) => (
         <div
+          key={e.id}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -20,7 +21,7 @@ export const Todos = () => {
           <h2>{e.text}</h2>
           <button
             style={{ cursor: 'pointer' }}
-            onClick={() => dispatch(removeTodos(e.id))}
+            onClick={() => dispatch(removeTodos(e))}
           >
             X
           </button>
