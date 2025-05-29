@@ -10,10 +10,16 @@ const AddTodos = () => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        return dispatch(addTodos(inputValue));
+        dispatch(addTodos(inputValue));
+        setInputValue('');
       }}
     >
-      <input type="text" onChange={(e) => setInputValue(e.target.value)} />
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        required
+      />
       <button type="submit">Add Todo</button>
     </form>
   );
