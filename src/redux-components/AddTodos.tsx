@@ -3,7 +3,7 @@ import { useAppDispatch } from '../redux/hooks';
 import { addTodos } from '../redux/slices/todos/todosSlice';
 
 const AddTodos = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState<string>('');
   const dispatch = useAppDispatch();
 
   return (
