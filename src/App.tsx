@@ -25,6 +25,7 @@ const App = () => {
       <h1>todos</h1>
       <AddTodos />
       <Todos />
+      <div></div>
     </>
   );
 };
