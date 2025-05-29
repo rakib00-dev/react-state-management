@@ -5,7 +5,10 @@ const todosSlice = createSlice({
   name: 'todos',
   reducers: {
     addTodos: (state, action) => {
-      const todo = { id: nanoid(), text: action.payload };
+      const todo = {
+        id: nanoid(),
+        text: action.payload,
+      };
       state.todos.push(todo);
     },
     removeTodos: (state, action) => {
