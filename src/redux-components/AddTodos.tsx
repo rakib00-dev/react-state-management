@@ -1,9 +1,9 @@
 const AddTodos = () => {
   return (
-    <div>
+    <form onSubmit={(e) => e.preventDefault()}>
       <input type="text" />
-      <button>X</button>
-    </div>
+      <button type="submit">Add Todo</button>
+    </form>
   );
 };
 
