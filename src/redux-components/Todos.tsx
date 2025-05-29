@@ -6,7 +6,7 @@ export const Todos = () => {
   const dispatch = useAppDispatch();
   return (
     <div>
-      {todos.map((e) => (
+      {todos.map((e, i) => (
         <div
           key={e.id}
           style={{
@@ -15,7 +15,8 @@ export const Todos = () => {
             gap: '10px',
           }}
         >
-          <h3>{e.id.slice(0, 5)}...</h3>
+          <span>{i + 1}.</span>
+          <p>id: {e.id.slice(0, 5)}...</p>
           <br />
           <br />
           <h2>{e.text}</h2>
