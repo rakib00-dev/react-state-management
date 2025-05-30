@@ -15,10 +15,11 @@ const todosSlice = createSlice({
       state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
     },
     updateTodos: (state, action) => {
-      state.todos.filter((t) => t.id == action.payload.id);
+      let updatingTodo = state.todos.filter((t) => t.id == action.payload.id);
+      console.log(updatingTodo);
     },
   },
 });
 
-export const { addTodos, removeTodos } = todosSlice.actions;
+export const { addTodos, removeTodos, updateTodos } = todosSlice.actions;
 export default todosSlice.reducer;
