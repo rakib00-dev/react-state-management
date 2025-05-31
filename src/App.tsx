@@ -24,7 +24,7 @@ const App = () => {
       <Todos />
       <br />
       <br />
-      <h1 style={{ placeItems: 'center', display: 'grid' }}>Jotai</h1>
+      <h1 style={{ placeItems: 'center', display: 'grid' }}>Zustand</h1>
     </>
   );
 };
