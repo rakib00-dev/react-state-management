@@ -1,3 +1,6 @@
 import { create } from 'zustand';
 
-console.log(create);
+export const useCounter = create((set) => ({
+  count: 0,
+  inc: () => set((state: any) => ({ count: state.count + 1 })),
+}));

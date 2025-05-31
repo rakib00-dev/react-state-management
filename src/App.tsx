@@ -6,6 +6,7 @@ import { increase, decrease } from './redux/slices/counter/counterSlice';
 import AddTodos from './redux-components/AddTodos';
 import Showing from './redux-components/Showing';
 import { Todos } from './redux-components/Todos';
+import Counter from './zust-components/Counter';
 
 const App = () => {
   const count = useAppSelector((state) => state.counter);
@@ -25,6 +26,7 @@ const App = () => {
       <br />
       <br />
       <h1 style={{ placeItems: 'center', display: 'grid' }}>Zustand</h1>
+      <Counter />
     </>
   );
 };
