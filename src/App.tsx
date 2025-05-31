@@ -13,8 +13,6 @@ const App = () => {
 
   const todos = useAppSelector((state) => state.todos.todos);
 
-  todos.map((e) => console.log(e));
-
   return (
     <>
       <h1>count is {count}</h1>

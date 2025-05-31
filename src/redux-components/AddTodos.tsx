@@ -14,8 +14,6 @@ const AddTodos = () => {
 
   let updatingTodoBody = todos.find((s) => s.id == updatingId);
 
-  console.log(updatingTodoBody);
-
   useEffect(() => {
     if (updatingId) {
       setUpdatingInputValue(`${updatingTodoBody?.text}`);
@@ -30,7 +28,12 @@ const AddTodos = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            dispatch(updateTodos(updatingTodoBody));
+            dispatch(
+              updateTodos({
+                id: updatingId,
+                text: updatingInputValue,
+              })
+            );
             setUpdatingInputValue('');
           }}
         >

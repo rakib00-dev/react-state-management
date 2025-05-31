@@ -20,9 +20,9 @@ const todosSlice = createSlice({
       let updatingTodo = state.todos.find((t) => t.id == id);
 
       if (updatingTodo) {
+        updatingTodo.id = id;
         updatingTodo.text = text;
       }
-      console.log(updatingTodo);
     },
   },
 });
