@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { isClicked } from '../redux/slices/editButton/editSlice';
+import { isClicked, isNotClicked } from '../redux/slices/editButton/editSlice';
 import { removeTodos } from '../redux/slices/todos/todosSlice';
 import { gettingID } from '../redux/slices/updatingId/updatingIdSlice';
 
@@ -36,7 +36,10 @@ export const Todos = () => {
 
           <button
             style={{ cursor: 'pointer' }}
-            onClick={() => dispatch(removeTodos(e))}
+            onClick={() => {
+              dispatch(removeTodos(e));
+              dispatch(isNotClicked());
+            }}
           >
             X
           </button>

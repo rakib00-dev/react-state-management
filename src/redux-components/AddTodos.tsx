@@ -12,13 +12,13 @@ const AddTodos = () => {
   const editBtnState = useAppSelector((state) => state.editBtn.value);
   const updatingId = useAppSelector((s) => s.UpdatingId.id);
 
-  let updatingText = todos.find((s) => s.id == updatingId);
+  let updatingTodoBody = todos.find((s) => s.id == updatingId);
 
-  console.log(updatingText);
+  console.log(updatingTodoBody);
 
   useEffect(() => {
     if (updatingId) {
-      setUpdatingInputValue(`${updatingText?.text}`);
+      setUpdatingInputValue(`${updatingTodoBody?.text}`);
     }
   }, [updatingId]);
 
@@ -30,7 +30,7 @@ const AddTodos = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            dispatch(updateTodos(inputValue));
+            dispatch(updateTodos(updatingTodoBody));
             setUpdatingInputValue('');
           }}
         >

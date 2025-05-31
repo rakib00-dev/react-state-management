@@ -15,7 +15,13 @@ const todosSlice = createSlice({
       state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
     },
     updateTodos: (state, action) => {
-      let updatingTodo = state.todos.filter((t) => t.id == action.payload.id);
+      const { id, text } = action.payload;
+
+      let updatingTodo = state.todos.find((t) => t.id == id);
+
+      if (updatingTodo) {
+        updatingTodo.text = text;
+      }
       console.log(updatingTodo);
     },
   },
