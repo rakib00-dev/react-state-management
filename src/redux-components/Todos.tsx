@@ -1,10 +1,14 @@
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { isClicked } from '../redux/slices/editButton/editSlice';
 import { removeTodos } from '../redux/slices/todos/todosSlice';
 
 export const Todos = () => {
   const todos = useAppSelector((state) => state.todos.todos);
   const dispatch = useAppDispatch();
-  console.log(todos);
+  // console.log(todos);
+
+  const editBtnState = useAppSelector((state) => state.editBtn);
+  console.log(editBtnState);
 
   return (
     <div>
@@ -23,7 +27,10 @@ export const Todos = () => {
           <br />
           <h2>{e.text}</h2>
 
-          <button style={{ cursor: 'pointer' }} onClick={() => console.log(2)}>
+          <button
+            style={{ cursor: 'pointer' }}
+            onClick={() => dispatch(isClicked())}
+          >
             EDIT
           </button>
 
