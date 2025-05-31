@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { removeTodos, updateTodos } from '../redux/slices/todos/todosSlice';
+import { removeTodos } from '../redux/slices/todos/todosSlice';
 
 export const Todos = () => {
   const todos = useAppSelector((state) => state.todos.todos);
@@ -23,10 +23,7 @@ export const Todos = () => {
           <br />
           <h2>{e.text}</h2>
 
-          <button
-            style={{ cursor: 'pointer' }}
-            onClick={() => dispatch(updateTodos(e))}
-          >
+          <button style={{ cursor: 'pointer' }} onClick={() => console.log(2)}>
             EDIT
           </button>
 

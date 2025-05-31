@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { useAppDispatch } from '../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { addTodos } from '../redux/slices/todos/todosSlice';
 
 const AddTodos = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const dispatch = useAppDispatch();
+
+  // const updatingTodos = useAppSelector(state=> state.todos.todos.map(e=> e.id ))
 
   return (
     <form
