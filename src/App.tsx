@@ -11,10 +11,9 @@ const App = () => {
   const count = useAppSelector((state) => state.counter);
   const dispatch = useAppDispatch();
 
-  const todos = useAppSelector((state) => state.todos.todos);
-
   return (
     <>
+      <h1 style={{ placeItems: 'center', display: 'grid' }}>Redux Toolkit</h1>
       <h1>count is {count}</h1>
       <button onClick={() => dispatch(increase())}>Increment</button>
       <button onClick={() => dispatch(decrease())}>Decrement</button>
@@ -23,6 +22,9 @@ const App = () => {
       <h1>todos</h1>
       <AddTodos />
       <Todos />
+      <br />
+      <br />
+      <h1 style={{ placeItems: 'center', display: 'grid' }}>Jotai</h1>
     </>
   );
 };
