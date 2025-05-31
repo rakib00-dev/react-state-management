@@ -35,6 +35,7 @@ const AddTodos = () => {
               })
             );
             setUpdatingInputValue('');
+            dispatch(isNotClicked());
           }}
         >
           <input
