@@ -7,7 +7,7 @@ export const Todos = () => {
   const dispatch = useAppDispatch();
   // console.log(todos);
 
-  const editBtnState = useAppSelector((state) => state.editBtn);
+  const editBtnState = useAppSelector((state) => state.editBtn.value);
   console.log(editBtnState);
 
   return (
@@ -29,7 +29,10 @@ export const Todos = () => {
 
           <button
             style={{ cursor: 'pointer' }}
-            onClick={() => dispatch(isClicked())}
+            onClick={() => {
+              dispatch(isClicked());
+              console.log(e.id);
+            }}
           >
             EDIT
           </button>
